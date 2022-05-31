@@ -175,6 +175,17 @@
             border: 0;
             border-top: 1px solid rgb(135, 134, 134);
         }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+          }
+          
+          td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-weight: 600;
+          }
     </style>
 </head>
 <body>
@@ -236,9 +247,9 @@
                 </li>
             </ol>
         </p>
-        <img src="Register.PNG" alt="register_screenshot" style="width: 396px;">
-        <img src="Login.PNG" alt="login_screenshot" style="width: 381px;">
-        <img src="Game.PNG" alt="login_screenshot" style="width: 400px;">
+        <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/Register.PNG" alt="register_screenshot" style="width: 396px;">
+        <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/Login.PNG" alt="login_screenshot" style="width: 381px;">
+        <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/Game.PNG" alt="login_screenshot" style="width: 400px;">
         <p>
             <h4>style="padding-left: 1rem;">Buttons on header</h4>
             <ol>
@@ -253,11 +264,11 @@
                 </li>
             </ol>
         </p>
-        <img src="Header.PNG" alt="login_screenshot" style="width: 800px; display: block; padding-top: 1rem">
+        <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/Header.PNG" alt="login_screenshot" style="width: 800px; display: block; padding-top: 1rem">
     </div>
     <hr>
     <div class="client_side">
-        <header><h2>⚪ Client Side</h2></header>
+        <header><h2>⚪ Client-Side</h2></header>
         <div class="todoList"> 
             <header>
                 <h3>① To Do List</h3>
@@ -273,21 +284,94 @@
         </div>
         <div class="alternative_theme" style="padding-left: 1rem;">
             <header><h3>② An alternative presentation theme for the application</h3></header>
-            <p>I would only use a single color for numbers instead of four colors.</p>
+            <p>I would only use a single color for numbers and operators instead of four colors that is similar to the photo below.<br>
+            <i>background-color: #fff</i>, <i>the color of number buttons: #81dfbf</i>, the color of hover or clicked number buttons: #45cd75,<br>
+            the color of operator buttons: #e4ada8, the color of hover or clicked operator buttons: #e4ada8.<br>
+            I will still use <i>font-family: 'Roboto', sans-serif</i>. Personally, I think it is a clearer style for players that they<br>
+            would know which button they clicked. I will keep the reset button and give-up button on the top right.
+            </p>
             <img src="Alternative_theme.PNG" alt="login_screenshot" style="width: 400px; display: block; padding-top: 1rem">
         </div>
         <div class="prefred_option">
             <header><h3>③ Server-side rendering vs client-side rendering</h3></header>
+            <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/Header.PNG" alt="login_screenshot" style="width: 800px; display: block; padding-top: 1rem">
+            <table>
+                <tr>
+                    <th>Options</th>
+                    <th>Server-side rendering (SSR)</th>
+                    <th>Cclient-side rendering (CSR)</th>
+                </tr>
+                <tr>
+                    <td>Advatages</td>
+                    <td>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Disdvatages</td>
+                    <td>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </td>
+                  </tr>
+            </table>
         </div>
     </div>
     <div class="server_side" style="padding-left: 1rem;">
+        <header><h2>⚪ Server-Side</h2></header>
         <div class="todoList">
-            
+            <header>
+                <h3>① To Do List</h3>
+                <form id="new_task_form">
+                    <input type="text" name="new_task_input" id="new_task_input" placeholder="What are you planning?" style='padding: 1rem;'/>
+                    <input type="submit" id="new_task_submit" value="Add task"/>
+                </form>
+            </header>
+            <main>
+                <div id="tasks_container">
+                </div>
+            </main>
         </div>
     </div>
     <div class="software_processes">
+        <header><h2>⚪ Software Processes</h2></header>
         <div class="todoList">
-            
+            <header>
+                <h3>① To Do List</h3>
+                <form id="new_task_form">
+                    <input type="text" name="new_task_input" id="new_task_input" placeholder="What are you planning?" style='padding: 1rem;'/>
+                    <input type="submit" id="new_task_submit" value="Add task"/>
+                </form>
+            </header>
+            <main>
+                <div id="tasks_container">
+                </div>
+            </main>
         </div>
     </div>
     <script>
