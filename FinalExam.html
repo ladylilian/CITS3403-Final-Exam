@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CITS3403 Agile Web Development</title>
+    <style>
+        *{
+            font-family: 'Roboto', sans-serif;
+          }
+          body {
+            display: flex;
+            flex-direction: column;
+            background-color:#2b2b2b;
+            align-items: flex-start;
+            color: #fff;
+            padding-left: 1rem;
+          }
+        .heading{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            background-color: #cef093;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 4px 4px 0px #0000001A;
+        }
+        .heading > header > h1{
+            color:rgb(54, 54, 54);
+        }
+        .overview > header{
+            padding-top: 80px;
+            padding-left: 1rem;
+        }
+        .overview > header > h2{
+            color: #fff;
+        }
+        .overview > img{
+            display: inline-block;
+            padding-left: 1rem;
+        }
+        .todoList > header {
+            padding-left: 1rem;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .todoList > header > h3{ 
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        #new_task_form {
+            display: flex;
+        }
+        
+        input, button {
+            appearance: none;
+            border: none;
+            outline: none;
+        }
+        
+        #new_task_input {
+            flex: 100%;
+            width: 400px;
+            background-color: #fff;
+            border-radius: 1rem;
+            margin-right: 1rem;
+            color: rgb(88, 88, 88);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        #new_task_input::placeholder {
+            color: rgb(150, 147, 147);
+        }
+        
+        #new_task_submit {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background-color: #cef093;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        #new_task_submit:hover {
+            opacity: 0.7;
+        }
+        
+        #new_task_submit:active {
+            opacity: 0.6;
+        }
+        main {
+            flex: 110%;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .tasks_container {
+            padding: 1rem;
+        }
+        
+        .tasks_container h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        #tasks_container .task {
+            display: flex;
+            flex: 100%;
+            height: 20px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .task .text {
+            color: rgb(150, 147, 147);
+            font-size: 1.2rem;
+            width: 100%;
+            display: block;
+            transition: 0.4s;
+        }
+        
+        .task .text:not(:read-only) {
+            color: #e87575;
+        }
+        
+        .task .actions{
+            display: flex;
+            margin: 0 -0.3rem;
+        }
+        
+        .task .actions button {
+            cursor: pointer;
+            margin: 0 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: 0.4s;
+        }
+        
+        .task .actions button:hover {
+            opacity: 0.8;
+        }
+        
+        .task  .actions button:active {
+            opacity: 0.6;
+        }
+        .task .actions .edit {
+            background-color: #aac976;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .task .actions .delete {
+            background-color: crimson;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        hr{
+            width: 98%; 
+            margin-top: 2rem; 
+            border: 0;
+            border-top: 1px solid rgb(135, 134, 134);
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <header><h1>Pin-shuan Tseng 22941085</h1></header>
+    </div>
+    <div class="overview">
+        <header><h2>⚪ Overview</h2></header>
+        <p>
+            <h4 style="padding-left: 1rem;">Creating account</h4>
+            <ol>
+                <li>
+                    Visit the 24 Game on your preferred browser.
+                </li>
+                <li>You will be directed to the Register page. Enter your provided Username and Password. 
+                </li>
+                <li> Click <b>Register</b> to register an account.
+                </li>
+            </ol>
+        </p>
+        <p>
+            <h4 style="padding-left: 1rem;">Logging In</h4>
+            <ol>
+                <li>
+                    Visit the 24 Game on your preferred browser.
+                </li>
+                <li>
+                    You will be directed to the Register page. Enter your provided Username and Password.
+                </li>
+                <li>
+                Tick the box next to Remember Me for your credentials to be saved for next time. 
+                </li>
+                <li> Click <b>Login</b> to login.
+                </li>
+            </ol>
+        </p>
+        <p>
+            <h4 style="padding-left: 1rem;">How to play</h4>
+            <p style="padding-left: 1rem;">Players are randomly given four digits.<br>
+                The objective is to use the four operators of addition(+), subtraction(-), multiplication(×), and division(÷)<br>
+                to calculate the four given digits and make the result equals to 24.</p>
+            <ol>
+                <li>
+                    Click a <b>Number</b>.
+                </li>
+                <li>
+                    Click an <b>Operator</b>. <br>Repeat 1. and 2. to make the 4 digits equals to 24.
+                </li>
+                <li>
+                    Once the players make to 24, the <b>Score</b> will add 100 . 
+                </li>
+                <li>
+                    When the players used all the 4 digits, but the result does not equal to 24<br>
+                    The <b>Reset</b> button will spin and hint them to reset the game.
+                </li>
+                <li>
+                    When the players want to give the stage, they can hit the <b>Give Up</b> button to get the answer and restart the game.<br>
+                    (The current score will be 0.)
+                </li>
+            </ol>
+        </p>
+        <img src="Register.PNG" alt="register_screenshot" style="width: 396px;">
+        <img src="Login.PNG" alt="login_screenshot" style="width: 381px;">
+        <img src="Game.PNG" alt="login_screenshot" style="width: 400px;">
+        <p>
+            <h4>style="padding-left: 1rem;">Buttons on header</h4>
+            <ol>
+                <li>
+                    At any stage of the game, you can click the <b>Help</b> button at the top right to help you understand the rules of the game.
+                </li>
+                <li>
+                    <b>Share</b> button at the top right to help you sharing your score.
+                </li>
+                <li>
+                    <b>Rank</b> button at the top right to show your current score and top 8 players' scores.
+                </li>
+            </ol>
+        </p>
+        <img src="Header.PNG" alt="login_screenshot" style="width: 800px; display: block; padding-top: 1rem">
+    </div>
+    <hr>
+    <div class="client_side">
+        <header><h2>⚪ Client Side</h2></header>
+        <div class="todoList"> 
+            <header>
+                <h3>① To Do List</h3>
+                <form id="new_task_form">
+                    <input type="text" name="new_task_input" id="new_task_input" placeholder="What are you planning?" style='padding: 1rem;'/>
+                    <input type="submit" id="new_task_submit" value="Add task"/>
+                </form>
+            </header>
+            <main>
+                <div id="tasks_container">
+                </div>
+            </main>
+        </div>
+        <div class="alternative_theme" style="padding-left: 1rem;">
+            <header><h3>② An alternative presentation theme for the application</h3></header>
+            <p>I would only use a single color for numbers instead of four colors.</p>
+            <img src="Alternative_theme.PNG" alt="login_screenshot" style="width: 400px; display: block; padding-top: 1rem">
+        </div>
+        <div class="prefred_option">
+            <header><h3>③ Server-side rendering vs client-side rendering</h3></header>
+        </div>
+    </div>
+    <div class="server_side" style="padding-left: 1rem;">
+        <div class="todoList">
+            
+        </div>
+    </div>
+    <div class="software_processes">
+        <div class="todoList">
+            
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', () => {
+            const form = document.querySelector("#new_task_form");
+            const input = document.querySelector("#new_task_input");
+            const tasks_container = document.querySelector("#tasks_container");
+        
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+        
+                const task = input.value;
+                // creating task div
+                const task_el = document.createElement('div');
+                task_el.classList.add('task');
+
+                //input, creating task input
+                const task_input = document.createElement('input');
+                task_input.type = 'text';
+                task_input.classList.add('text');
+                task_input.value = task;
+                task_input.setAttribute('readonly', 'readonly');
+        
+                task_el.appendChild(task_input);
+
+                // actions, creating edit and delete buttons
+                const task_actions = document.createElement('div');
+                task_actions.classList.add('actions');
+                
+                const task_edit = document.createElement('button');
+                task_edit.classList.add('edit');
+                task_edit.innerText = 'Edit';
+        
+                const task_delete = document.createElement('button');
+                task_delete.classList.add('delete');
+                task_delete.innerText = 'Delete';
+        
+                task_actions.appendChild(task_edit);
+                task_actions.appendChild(task_delete);
+        
+                task_el.appendChild(task_actions);
+        
+                tasks_container.appendChild(task_el);
+        
+                input.value = '';
+
+                // editing task
+                task_edit.addEventListener('click', (e) => {
+                    if (task_edit.innerText.toLowerCase() == "edit") {
+                        task_edit.innerText = "Save";
+                        task_input.removeAttribute("readonly");
+                        task_input.focus();
+                    } else {
+                        task_edit.innerText = "Edit";
+                        task_input.setAttribute("readonly", "readonly");
+                    }
+                });
+
+                // deleting task
+                task_delete.addEventListener('click', (e) => {
+                    tasks_container.removeChild(task_el);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
