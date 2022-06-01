@@ -14,6 +14,8 @@
             background-color:#2b2b2b;
             align-items: flex-start;
             color: #fff;
+          }
+          div{
             padding-left: 1rem;
           }
         .heading{
@@ -27,22 +29,22 @@
             justify-content: center;
             box-shadow: 4px 4px 4px 0px #0000001A;
         }
+        .sections h1{
+            color: #fff;
+        }
         .heading > header > h1{
             color:rgb(54, 54, 54);
         }
         .overview > header{
             padding-top: 80px;
-            padding-left: 1rem;
+
         }
-        .overview > header > h2{
-            color: #fff;
-        }
-        .overview > img{
+        img{
             display: inline-block;
-            padding-left: 1rem;
+
         }
         .todoList > header {
-            padding-left: 1rem;
+
             max-width: 800px;
             width: 100%;
         }
@@ -98,7 +100,6 @@
             flex: 110%;
             max-width: 800px;
             width: 100%;
-            margin: 0 auto;
         }
         
         .tasks_container {
@@ -169,6 +170,9 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        ol, p{
+            font-size: 17px;
+        }
         hr{
             width: 98%; 
             margin-top: 2rem; 
@@ -184,7 +188,9 @@
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
-            font-weight: 600;
+          }
+          td{
+            min-width: 100px;
           }
     </style>
 </head>
@@ -193,85 +199,87 @@
         <header><h1>Pin-shuan Tseng 22941085</h1></header>
     </div>
     <div class="overview">
-        <header><h2>⚪ Overview</h2></header>
-        <p>
-            <h4 style="padding-left: 1rem;">Creating account</h4>
-            <ol>
-                <li>
-                    Visit the 24 Game on your preferred browser.
-                </li>
-                <li>You will be directed to the Register page. Enter your provided Username and Password. 
-                </li>
-                <li> Click <b>Register</b> to register an account.
-                </li>
-            </ol>
-        </p>
-        <p>
-            <h4 style="padding-left: 1rem;">Logging In</h4>
-            <ol>
-                <li>
-                    Visit the 24 Game on your preferred browser.
-                </li>
-                <li>
-                    You will be directed to the Register page. Enter your provided Username and Password.
-                </li>
-                <li>
-                Tick the box next to Remember Me for your credentials to be saved for next time. 
-                </li>
-                <li> Click <b>Login</b> to login.
-                </li>
-            </ol>
-        </p>
-        <p>
-            <h4 style="padding-left: 1rem;">How to play</h4>
-            <p style="padding-left: 1rem;">Players are randomly given four digits.<br>
-                The objective is to use the four operators of addition(+), subtraction(-), multiplication(×), and division(÷)<br>
-                to calculate the four given digits and make the result equals to 24.</p>
-            <ol>
-                <li>
-                    Click a <b>Number</b>.
-                </li>
-                <li>
-                    Click an <b>Operator</b>. <br>Repeat 1. and 2. to make the 4 digits equals to 24.
-                </li>
-                <li>
-                    Once the players make to 24, the <b>Score</b> will add 100 . 
-                </li>
-                <li>
-                    When the players used all the 4 digits, but the result does not equal to 24<br>
-                    The <b>Reset</b> button will spin and hint them to reset the game.
-                </li>
-                <li>
-                    When the players want to give the stage, they can hit the <b>Give Up</b> button to get the answer and restart the game.<br>
-                    (The current score will be 0.)
-                </li>
-            </ol>
-        </p>
-        <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/Register.PNG" alt="register_screenshot" style="width: 396px;">
-        <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/Login.PNG" alt="login_screenshot" style="width: 381px;">
-        <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/Game.PNG" alt="login_screenshot" style="width: 400px;">
-        <p>
-            <h4>style="padding-left: 1rem;">Buttons on header</h4>
-            <ol>
-                <li>
-                    At any stage of the game, you can click the <b>Help</b> button at the top right to help you understand the rules of the game.
-                </li>
-                <li>
-                    <b>Share</b> button at the top right to help you sharing your score.
-                </li>
-                <li>
-                    <b>Rank</b> button at the top right to show your current score and top 8 players' scores.
-                </li>
-            </ol>
-        </p>
-        <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/Header.PNG" alt="login_screenshot" style="width: 800px; display: block; padding-top: 1rem">
+        <header class="sections"><h1>⚪ Overview</h1></header>
+        <div class="overvire_contents">
+            <p>
+                <h2>Creating account</h2>
+                <ol style="font-size: 18px">
+                    <li>
+                        Visit the 24 Game on your preferred browser.
+                    </li>
+                    <li>You will be directed to the Register page. Enter your provided Username and Password. 
+                    </li>
+                    <li> Click <b>Register</b> to register an account.
+                    </li>
+                </ol>
+            </p>
+            <p>
+                <h2>Logging In</h2>
+                <ol>
+                    <li>
+                        Visit the 24 Game on your preferred browser.
+                    </li>
+                    <li>
+                        You will be directed to the Register page. Enter your provided Username and Password.
+                    </li>
+                    <li>
+                    Tick the box next to Remember Me for your credentials to be saved for next time. 
+                    </li>
+                    <li> Click <b>Login</b> to login.
+                    </li>
+                </ol>
+            </p>
+            <p>
+                <h2>How to play</h2>
+                <p>Players are randomly given four digits.<br>
+                    The objective is to use the four operators of addition(+), subtraction(-), multiplication(×), and division(÷)<br>
+                    to calculate the four given digits and make the result equals to 24.</p>
+                <ol>
+                    <li>
+                        Click a <b>Number</b>.
+                    </li>
+                    <li>
+                        Click an <b>Operator</b>. <br>Repeat 1. and 2. to make the 4 digits equals to 24.
+                    </li>
+                    <li>
+                        Once the players make to 24, the <b>Score</b> will add 100 . 
+                    </li>
+                    <li>
+                        When the players used all the 4 digits, but the result does not equal to 24<br>
+                        The <b>Reset</b> button will spin and hint them to reset the game.
+                    </li>
+                    <li>
+                        When the players want to give the stage, they can hit the <b>Give Up</b> button to get the answer and restart the game.<br>
+                        (The current score will be 0.)
+                    </li>
+                </ol>
+            </p>
+            <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/Register.PNG" alt="register_screenshot" style="width: 396px;">
+            <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/Login.PNG" alt="login_screenshot" style="width: 381px;">
+            <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/Game.PNG" alt="game_screenshot" style="width: 400px;">
+            <p>
+                <h2>Buttons on header</h2>
+                <ol>
+                    <li>
+                        At any stage of the game, you can click the <b>Help</b> button at the top right to help you understand the rules of the game.
+                    </li>
+                    <li>
+                        <b>Share</b> button at the top right to help you sharing your score.
+                    </li>
+                    <li>
+                        <b>Rank</b> button at the top right to show your current score and top 8 players' scores.
+                    </li>
+                </ol>
+            </p>
+            <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/Header.PNG" alt="header_screenshot" style="width: 800px; display: block; padding-top: 1rem">
+        </div>
     </div>
     <hr>
     <div class="client_side">
-        <header><h2>⚪ Client-Side</h2></header>
+        <header class="sections"><h1>⚪ Client-Side</h1></header>
         <div class="todoList"> 
             <header>
-                <h3>① To Do List</h3>
+                <h2>① To Do List</h2>
                 <form id="new_task_form">
                     <input type="text" name="new_task_input" id="new_task_input" placeholder="What are you planning?" style='padding: 1rem;'/>
                     <input type="submit" id="new_task_submit" value="Add task"/>
@@ -282,71 +290,74 @@
                 </div>
             </main>
         </div>
-        <div class="alternative_theme" style="padding-left: 1rem;">
-            <header><h3>② An alternative presentation theme for the application</h3></header>
+        <div class="alternative_theme">
+            <header><h2>② An alternative presentation theme for the application</h2></header>
             <p>I would only use a single color for numbers and operators instead of four colors that is similar to the photo below.<br>
             <i>background-color: #fff</i>, <i>the color of number buttons: #81dfbf</i>, the color of hover or clicked number buttons: #45cd75,<br>
             the color of operator buttons: #e4ada8, the color of hover or clicked operator buttons: #e4ada8.<br>
             I will still use <i>font-family: 'Roboto', sans-serif</i>. Personally, I think it is a clearer style for players that they<br>
             would know which button they clicked. I will keep the reset button and give-up button on the top right.
             </p>
-            <img src="Alternative_theme.PNG" alt="login_screenshot" style="width: 400px; display: block; padding-top: 1rem">
+            <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/Alternative_theme.PNG" alt="login_screenshot" style="width: 400px; display: block; padding-top: 1rem">
         </div>
-        <div class="prefred_option">
-            <header><h3>③ Server-side rendering vs client-side rendering</h3></header>
-            <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/Header.PNG" alt="login_screenshot" style="width: 800px; display: block; padding-top: 1rem">
-            <table>
-                <tr>
-                    <th>Options</th>
-                    <th>Server-side rendering (SSR)</th>
-                    <th>Cclient-side rendering (CSR)</th>
-                </tr>
-                <tr>
-                    <td>Advatages</td>
-                    <td>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Disdvatages</td>
-                    <td>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </td>
-                  </tr>
-            </table>
+        <div class="prefred_option" >
+            <header><h2>③ Server-side rendering vs client-side rendering</h2></header>
+            <main>
+                <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/CSR-vs-SSR-infographic.png" alt="CSR-vs-SSR-infographic" style="width: 500px; padding-bottom: 1rem;">
+                <table>
+                    <tr>
+                        <th>Options</th>
+                        <th>Server-side rendering (SSR)</th>
+                        <th>Cclient-side rendering (CSR)</th>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Advatages</td>
+                        <td>
+                            <ul>
+                                <li><b>The page can be viewed faster.</b>The HTML has been pre-rendered before, so the user will see a non-interactive page (the JavaScripts are downloading)</li>
+                                <li><b>SEO-friendly.</b>SEO (Search Engine Optimization), Google's algorithms are always looking to detect which pages offer the best user experience.</li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><b>The page can be viewd faster.</b>The HTML has been pre-rendered before</li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Disdvatages</td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </main>
         </div>
     </div>
-    <div class="server_side" style="padding-left: 1rem;">
-        <header><h2>⚪ Server-Side</h2></header>
+    <hr>
+    <div class="server_side">
+        <header class="sections"><h1>⚪ Server-Side</h1></header>
         <div class="todoList">
             <header>
-                <h3>① To Do List</h3>
+                <h2>① To Do List</h2>
                 <form id="new_task_form">
                     <input type="text" name="new_task_input" id="new_task_input" placeholder="What are you planning?" style='padding: 1rem;'/>
                     <input type="submit" id="new_task_submit" value="Add task"/>
@@ -357,12 +368,71 @@
                 </div>
             </main>
         </div>
+        <div class="descirption">
+            <header><h2>② Scale The App</h2></header>
+            <p>Describe what you think would be the ideal team to work 
+            with to deliver and maintain the application (100 words)</p>
+        </div>
+        <div class="prefred_option" >
+            <header><h2>③ Active User Tracking vs Passive User Tracking</h2></header>
+            <main>
+                <!-- <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/CSR-vs-SSR-infographic.png" alt="CSR-vs-SSR-infographic" style="width: 500px; padding-bottom: 1rem; margin-right: 1rem;"> -->
+                <table>
+                    <tr>
+                        <th>Options</th>
+                        <th>Active User Tracking</th>
+                        <th>Passive User Tracking</th>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Advatages</td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Disdvatages</td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </main>
+        </div>
     </div>
+    <hr>
     <div class="software_processes">
-        <header><h2>⚪ Software Processes</h2></header>
+        <header class="sections"><h1>⚪ Software Processes</h1></header>
+        <div class="descirption"><p>Describe what you think would be the ideal team to work 
+            with to deliver and maintain the application (100 words)</p></div>
         <div class="todoList">
             <header>
-                <h3>① To Do List</h3>
+                <h2>① To Do List</h2>
                 <form id="new_task_form">
                     <input type="text" name="new_task_input" id="new_task_input" placeholder="What are you planning?" style='padding: 1rem;'/>
                     <input type="submit" id="new_task_submit" value="Add task"/>
@@ -373,7 +443,22 @@
                 </div>
             </main>
         </div>
+        <div class="descirption">
+            <header><h2>② Testing Strategy</h2></header>
+            <p>Ensuring the reliability of the application as new features are added will be crucial to 
+                building a user base. Describe a testing strategy for your application identifying what kind 
+                of tests and validation processes should be used, and how they should be executed (about 
+                200 words).</p>
+        </div>
+        <div class="project_process">
+            <h2>③ Process of Our Project</h2>
+            <p>Describe the process your team used in developping the application to its current state and 
+            give an honest and professional appraisal of each team member you worked with.<br> What 
+            changes would you make within the project team if you were to continue to develop the 
+            application (about 200 words). 
+            </p></div>
     </div>
+    <!-- Scripts -->
     <script>
         window.addEventListener('load', () => {
             const form = document.querySelector("#new_task_form");
