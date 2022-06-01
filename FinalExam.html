@@ -29,10 +29,10 @@
             justify-content: center;
             box-shadow: 4px 4px 4px 0px #0000001A;
         }
-        .sections h1{
+        .sections h2{
             color: #fff;
         }
-        .heading > header > h1{
+        .heading > header > h2{
             color:rgb(54, 54, 54);
         }
         .overview > header{
@@ -49,12 +49,7 @@
             width: 100%;
         }
         
-        .todoList > header > h3{ 
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-        
-        #new_task_form {
+        #new_task_form1, #new_task_form2, #new_task_form3 {
             display: flex;
         }
         
@@ -64,17 +59,17 @@
             outline: none;
         }
         
-        #new_task_input {
+        #new_task_input1,  #new_task_input2, #new_task_input3{
             flex: 100%;
             width: 400px;
             background-color: #fff;
             border-radius: 1rem;
             margin-right: 1rem;
             color: rgb(88, 88, 88);
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             margin-bottom: 1rem;
         }
-        #new_task_input::placeholder {
+        #new_task_input1::placeholder, #new_task_input2::placeholder, #new_task_input3::placeholder {
             color: rgb(150, 147, 147);
         }
         
@@ -106,13 +101,13 @@
             padding: 1rem;
         }
         
-        .tasks_container h2 {
+        .tasks_container h3 {
             font-size: 1.5rem;
             color: #fff;
             margin-bottom: 1rem;
         }
         
-        #tasks_container .task {
+        .tasks_container .task {
             display: flex;
             flex: 100%;
             height: 20px;
@@ -171,7 +166,8 @@
             -webkit-text-fill-color: transparent;
         }
         ol, p{
-            font-size: 17px;
+            font-size: 14px;
+            text-align: justify;
         }
         hr{
             width: 98%; 
@@ -192,18 +188,21 @@
           td{
             min-width: 100px;
           }
+          td li{
+            padding-bottom: 1rem;
+        }
     </style>
 </head>
 <body>
     <div class="heading">
-        <header><h1>Pin-shuan Tseng 22941085</h1></header>
+        <header><h2>CITS3403 Pin-shuan Tseng 22941085</h2></header>
     </div>
     <div class="overview">
-        <header class="sections"><h1>⚪ Overview</h1></header>
+        <header class="sections"><h2>⚪ Overview</h2></header>
         <div class="overvire_contents">
             <p>
-                <h2>Creating account</h2>
-                <ol style="font-size: 18px">
+                <h3>Creating account</h3>
+                <ol>
                     <li>
                         Visit the 24 Game on your preferred browser.
                     </li>
@@ -214,7 +213,7 @@
                 </ol>
             </p>
             <p>
-                <h2>Logging In</h2>
+                <h3>Logging In</h3>
                 <ol>
                     <li>
                         Visit the 24 Game on your preferred browser.
@@ -230,7 +229,7 @@
                 </ol>
             </p>
             <p>
-                <h2>How to play</h2>
+                <h3>How to play</h3>
                 <p>Players are randomly given four digits.<br>
                     The objective is to use the four operators of addition(+), subtraction(-), multiplication(×), and division(÷)<br>
                     to calculate the four given digits and make the result equals to 24.</p>
@@ -258,7 +257,7 @@
             <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/Login.PNG" alt="login_screenshot" style="width: 381px;">
             <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/Game.PNG" alt="game_screenshot" style="width: 400px;">
             <p>
-                <h2>Buttons on header</h2>
+                <h3>Buttons on header</h3>
                 <ol>
                     <li>
                         At any stage of the game, you can click the <b>Help</b> button at the top right to help you understand the rules of the game.
@@ -267,7 +266,7 @@
                         <b>Share</b> button at the top right to help you sharing your score.
                     </li>
                     <li>
-                        <b>Rank</b> button at the top right to show your current score and top 8 players' scores.
+                        <b>Rank</b> button at the top right to show your current score and top 10 players' scores.
                     </li>
                 </ol>
             </p>
@@ -276,23 +275,66 @@
     </div>
     <hr>
     <div class="client_side">
-        <header class="sections"><h1>⚪ Client-Side</h1></header>
+        <header class="sections"><h2>⚪ Client-Side</h2></header>
+        <div class="overview_of_architecture">
+            <img src="images\File_structure.PNG" alt="header_screenshot" style="width: 200px; display: block;">
+            <h3>Overview of client-side architecture</h3>
+            <p>We create two folders called <b>templet</b> and <b>static</b> to store the <i>HTML</i> files and the <i>CSS</i> & <i>JavaScripts</i> files.<br>
+            <br>The contents of our application, such as the header, login, and game pages, as well as additional features such as the guide, ranking, and give-up button, are all contained in the <b>templet</b> file.
+            <br>In the <b>static</b> file, we further created two files, called <b>javascripts</b> and <b>styles</b> to store <i>JavaScripts</i> and <i>CSS</i> files respectively.
+            <br>The game_page.js enables users to interact with our app, including the clicking the number and operator buttons to do the calculations and pop-up guide and give-up buttons by clicking.
+            <br>Finally, the <b>styles</b> contains all the <i>CSS</i> files to style our website.
+            <br>
+            <br> These files are able to be rendered completely in the browser or requested by the client.
+            </p>
+        </div>
         <div class="todoList"> 
             <header>
-                <h2>① To Do List</h2>
-                <form id="new_task_form">
-                    <input type="text" name="new_task_input" id="new_task_input" placeholder="What are you planning?" style='padding: 1rem;'/>
+                <h3>① To Do List</h3>
+                <form id="new_task_form1">
+                    <input type="text" name="new_task_input1" id="new_task_input1" placeholder="What are you planning?" style='padding: 1rem;'/>
                     <input type="submit" id="new_task_submit" value="Add task"/>
                 </form>
             </header>
             <main>
-                <div id="tasks_container">
+                <div class="tasks_container" id="tasks_container1">
+                    <div class="task">
+                        <input type="text" class="text" readonly="readonly" value="Share to other social media"/>
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                    <p id="description">The app now only allow the players to share the website on Facebook.
+                        <br>With other options available increases the exposure of our app.
+                    </p>
+                    <div class="task">
+                        <input type="text" class="text" readonly="readonly" value="Chellenge Mode"/>
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                    <p id="description">Current app only provide a casual playing mode that train players' mathmetical skills without limited answer time.
+                        <br> I would like to develop a chellenge mode that players need to make 24 within limited time like 40 seconds.
+                    </p>
+                    <div class="task">
+                        <input type="text" class="text" readonly="readonly" value="Available on different screen sizes"/>
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                    <p id="description">The app is able to play on different screen sizes, however, some buttons might disappeaer on small screen size.
+                        <br> We should ensure players to have the same experience while playing the game on different devices.
+                    </p>
                 </div>
             </main>
         </div>
         <div class="alternative_theme">
-            <header><h2>② An alternative presentation theme for the application</h2></header>
-            <p>I would only use a single color for numbers and operators instead of four colors that is similar to the photo below.<br>
+            <header><h3>② An alternative presentation theme for the application</h3></header>
+            <p>Single Color: <br>
+            I would only use a single color for numbers and operators instead of four colors that is similar to the photo below.<br>
             <i>background-color: #fff</i>, <i>the color of number buttons: #81dfbf</i>, the color of hover or clicked number buttons: #45cd75,<br>
             the color of operator buttons: #e4ada8, the color of hover or clicked operator buttons: #e4ada8.<br>
             I will still use <i>font-family: 'Roboto', sans-serif</i>. Personally, I think it is a clearer style for players that they<br>
@@ -301,50 +343,55 @@
             <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/Alternative_theme.PNG" alt="login_screenshot" style="width: 400px; display: block; padding-top: 1rem">
         </div>
         <div class="prefred_option" >
-            <header><h2>③ Server-side rendering vs client-side rendering</h2></header>
+            <header><h3>③ Server-side rendering vs client-side rendering</h3></header>
             <main>
-                <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/CSR-vs-SSR-infographic.png" alt="CSR-vs-SSR-infographic" style="width: 500px; padding-bottom: 1rem;">
+                <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/CSR-vs-SSR-infographic.png" alt="CSR-vs-SSR-infographic" style="width: 400px; padding-bottom: 1rem;">
+                <p>There are four mahor factors between these two:
+                    <ol>
+                        <li>Load time</li>
+                        <li>SEO (Search Engine Optimization)</li>
+                        <li>Time of appearance against time of first user interaction</li>
+                        <li>Complexity of UI</li>
+                    </ol>
+                </p>
                 <table>
                     <tr>
                         <th>Options</th>
-                        <th>Server-side rendering (SSR)</th>
-                        <th>Cclient-side rendering (CSR)</th>
+                        <th colspan="5" style="background-color: green;">Server-side rendering (SSR)</th>
+                        <th colspan="5">Client-side rendering (CSR)</th>
                     </tr>
                     <tr>
                         <td style="font-weight: 600;">Advatages</td>
-                        <td>
+                        <td colspan="4" style="background-color: green;">
                             <ul>
-                                <li><b>The page can be viewed faster.</b>The HTML has been pre-rendered before, so the user will see a non-interactive page (the JavaScripts are downloading)</li>
-                                <li><b>SEO-friendly.</b>SEO (Search Engine Optimization), Google's algorithms are always looking to detect which pages offer the best user experience.</li>
-                                <li></li>
-                                <li></li>
+                                <li><b>Shorter page load time.</b> <br>The server responds by sending pre-rendered HTML, so the user will see a non-interactive page immediaately (the JavaScripts are downloading).</li>
+                                <li><b>SEO-friendly.</b> <br>Google's algorithms always look for the pages offering the best user experience. Shorter loading time helps the site rank higher in Google search results.</li>
+                                <li><b>Ideal for websites that only deliver static content.</b> <br></li>
+                                <li><b>Less / no JavaScripts dependency.</b> <br></li>
                             </ul>
                         </td>
-                        <td>
+                        <td colspan="4">
                             <ul>
-                                <li><b>The page can be viewd faster.</b>The HTML has been pre-rendered before</li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li><b>Lower server usage level.</b> Because it doesn't need to deal with extensive HTML, more processing power is available to load the users' subsequent requests, improving the overall experience.</li>
+                                <li><b>Make the navigation agile.</b> <br></li>
+                                <li><b>Renders faster after initial page load.</b> <br></li>
+                                <li><b>Rich site interaction.</b> <br></li>
                             </ul>
                         </td>
                     </tr>
                     <tr>
                         <td style="font-weight: 600;">Disdvatages</td>
-                        <td>
+                        <td colspan="4" style="background-color: green;">
                             <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li><b>Larger document size.</b> <br>A new HTML file is loaded each time the user navigates to another page on the website.</li>
+                                <li><b>Unable to support many visitors.</b> When the server has a lot of visitors or the site is vast, the page rendering can take a long time.<br></li>
+                                <li><b>Server costs will be high to provide higher performance.</b> <br>As a result of the increased server demand, a more robust hosting solution is required.</li>
                             </ul>
                         </td>
-                        <td>
+                        <td colspan="4">
                             <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li><b>Slow loading at the first time.</b> It's a one-time occurrence, but it can give the page a negative first impression.</li>
+                                <li><b>Hinders SEO if it's not properly executed.</b> Because it is based on JavaScript and the content is not constructed until it reaches the client's browsers, search engine bots are unable to fully crawl the sites.<br></li>
                             </ul>
                         </td>
                     </tr>
@@ -354,70 +401,100 @@
     </div>
     <hr>
     <div class="server_side">
-        <header class="sections"><h1>⚪ Server-Side</h1></header>
+        <header class="sections"><h2>⚪ Server-Side</h2></header>
+        <div class="overview_of_architecture">
+            <h3>Overview of server-side architecture</h3>
+            <p>We use <i>Flask</i>, <i>Flask-SQLAlchemy</i>, and <i>SQLite</i> to store players' account information (e.g. username and password).
+            <br> It can authenticate a user to allow them login back by using the matched username and password stored in our database.
+            <br> In the pop-up ranking, it shows the top 10 players' usernames and personal highest score records in the game by requesting the date form server.
+            <br> Using @login_required decorator allows the game page is only accessible to logged-in users.
+        </p>
+        </div>
         <div class="todoList">
             <header>
-                <h2>① To Do List</h2>
-                <form id="new_task_form">
-                    <input type="text" name="new_task_input" id="new_task_input" placeholder="What are you planning?" style='padding: 1rem;'/>
+                <h3>① To Do List</h3>
+                <form id="new_task_form2">
+                    <input type="text" name="new_task_input2" id="new_task_input2" placeholder="What are you planning?" style='padding: 1rem;'/>
                     <input type="submit" id="new_task_submit" value="Add task"/>
                 </form>
             </header>
             <main>
-                <div id="tasks_container">
+                <div class="tasks_container" id="tasks_container2">
+                    <div class="task">
+                        <input type="text" class="text" readonly="readonly" value="Unable to record the score in our database">
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                    <p id="description">Unfortunately, we did not successfully store the current score to our database.
+                        <br>The score is correct in the HTML and JavaScripts and we were looking for a method to update it to the database from them.
+                    </p>
+                    <div class="task">
+                        <input type="text" class="text" readonly="readonly">
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                    <p id="description">The app now only allow the players to share the website on Facebook.</p>
+                    <div class="task">
+                        <input type="text" class="text" readonly="readonly">
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                    <p id="description">The app now only allow the players to share the website on Facebook.</p>
                 </div>
             </main>
         </div>
         <div class="descirption">
-            <header><h2>② Scale The App</h2></header>
+            <header><h3>② Scale The App</h3></header>
             <p>Describe what you think would be the ideal team to work 
             with to deliver and maintain the application (100 words)</p>
         </div>
         <div class="prefred_option" >
-            <header><h2>③ Active User Tracking vs Passive User Tracking</h2></header>
+            <header><h3>③ Active User Tracking vs Passive User Tracking</h3></header>
             <main>
-                <!-- <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/CSR-vs-SSR-infographic.png" alt="CSR-vs-SSR-infographic" style="width: 500px; padding-bottom: 1rem; margin-right: 1rem;"> -->
+                <img src="https://raw.githubusercontent.com/ladylilian/CITS3403-Final-Exam/master/images/CSR-vs-SSR-infographic.png" alt="CSR-vs-SSR-infographic" style="width: 400px; padding-bottom: 1rem;">
+                <p>There are four mahor factors between these two:
+                    <ol>
+                        <li>Load time</li>
+                        <li>SEO (Search Engine Optimization)</li>
+                        <li>Time of appearance against time of first user interaction</li>
+                        <li>Complexity of UI</li>
+                    </ol>
+                </p>
                 <table>
                     <tr>
                         <th>Options</th>
-                        <th>Active User Tracking</th>
-                        <th>Passive User Tracking</th>
+                        <th colspan="5" style="background-color: green;">Active User Tracking</th>
+                        <th colspan="5">Passive User Tracking</th>
                     </tr>
                     <tr>
                         <td style="font-weight: 600;">Advatages</td>
-                        <td>
+                        <td colspan="4" style="background-color: green;">
                             <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li><b>Complete database.</b> It is more convenient for developers manage the users' data.</li>
                             </ul>
                         </td>
-                        <td>
+                        <td colspan="4">
                             <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li><b>Efficient to keep track.</b></li>
                             </ul>
                         </td>
                     </tr>
                     <tr>
                         <td style="font-weight: 600;">Disdvatages</td>
-                        <td>
+                        <td colspan="4" style="background-color: green;">
                             <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li><b>Risk of data leakage.</b> Some users may not want to expose their personal data on the internet</li>
                             </ul>
                         </td>
-                        <td>
+                        <td colspan="4">
                             <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li><b>vulnerable.</b></li>
                             </ul>
                         </td>
                     </tr>
@@ -427,44 +504,72 @@
     </div>
     <hr>
     <div class="software_processes">
-        <header class="sections"><h1>⚪ Software Processes</h1></header>
+        <header class="sections"><h2>⚪ Software Processes</h2></header>
         <div class="descirption"><p>Describe what you think would be the ideal team to work 
             with to deliver and maintain the application (100 words)</p></div>
         <div class="todoList">
             <header>
-                <h2>① To Do List</h2>
-                <form id="new_task_form">
-                    <input type="text" name="new_task_input" id="new_task_input" placeholder="What are you planning?" style='padding: 1rem;'/>
+                <h3>① To Do List</h3>
+                <form id="new_task_form3">
+                    <input type="text" name="new_task_input3" id="new_task_input3" placeholder="What are you planning?" style='padding: 1rem;'/>
                     <input type="submit" id="new_task_submit" value="Add task"/>
                 </form>
             </header>
             <main>
-                <div id="tasks_container">
+                <div class="tasks_container" id="tasks_container3">
+                    <div class="task">
+                        <input type="text" class="text" readonly="readonly">
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                    <p id="description">The app now only allow the players to share the website on Facebook.</p>
+                    <div class="task">
+                        <input type="text" class="text" readonly="readonly">
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                    <p id="description">The app now only allow the players to share the website on Facebook.</p>
+                    <div class="task">
+                        <input type="text" class="text" readonly="readonly">
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                    <p id="description">The app now only allow the players to share the website on Facebook.</p>
                 </div>
             </main>
         </div>
         <div class="descirption">
-            <header><h2>② Testing Strategy</h2></header>
-            <p>Ensuring the reliability of the application as new features are added will be crucial to 
-                building a user base. Describe a testing strategy for your application identifying what kind 
-                of tests and validation processes should be used, and how they should be executed (about 
-                200 words).</p>
+            <header><h3>② Testing Strategy</h3></header>
+            <p>I think Unit tests ane Acceptance Test should be applied on the app.<br>
+                Unit tests: test each individual function for to ensure it behaves correctly.<br>
+                Acceptance Test: Run through complete user scenarios via the user interface.</p>
+                <br> By using these two testing method to ensure the functions are working as we thought and<br>
+                know what issues that players may face while playing the game.
         </div>
         <div class="project_process">
-            <h2>③ Process of Our Project</h2>
-            <p>Describe the process your team used in developping the application to its current state and 
-            give an honest and professional appraisal of each team member you worked with.<br> What 
-            changes would you make within the project team if you were to continue to develop the 
-            application (about 200 words). 
+            <h3>③ Process of Our Project</h3>
+            <p>There are only two people in my team and we both are not professinal at web development.<br> 
+                At the beginning, we even don't know how to work with GitHub properly, so we have to back up our files in our laptop sometimes.
+                <br> We decided to create an uncommon game to chellenge ourself and we chose to develop the 24 Game, which requires more
+                <br> complex algorithms to code.
+                The current state of app isn't complete because the two major reasons:<br>
+                 1) it's not able to store the currnet score in the database.
+                 2) the number buttons still have bugs, so it has to follow certain rule/order to make it work properly.
             </p></div>
     </div>
     <!-- Scripts -->
     <script>
         window.addEventListener('load', () => {
-            const form = document.querySelector("#new_task_form");
-            const input = document.querySelector("#new_task_input");
-            const tasks_container = document.querySelector("#tasks_container");
-        
+            const form = document.querySelector("#new_task_form1");
+            const input = document.querySelector("#new_task_input1");
+            const tasks_container = document.querySelector("#tasks_container1");
+    
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
         
@@ -505,22 +610,144 @@
 
                 // editing task
                 task_edit.addEventListener('click', (e) => {
-                    if (task_edit.innerText.toLowerCase() == "edit") {
-                        task_edit.innerText = "Save";
-                        task_input.removeAttribute("readonly");
-                        task_input.focus();
-                    } else {
-                        task_edit.innerText = "Edit";
-                        task_input.setAttribute("readonly", "readonly");
-                    }
+                if (task_edit.innerText.toLowerCase() == "edit") {
+                    task_edit.innerText = "Save";
+                    task_input.removeAttribute("readonly");
+                    task_input.focus();
+                } else {
+                    task_edit.innerText = "Edit";
+                    task_input.setAttribute("readonly", "readonly");
+                }
                 });
+            // deleting task
+                task_delete.addEventListener('click', (e) => {
+                    tasks_container.removeChild(task_el);
+                });
+            });
+        });
 
+        window.addEventListener('load', () => {
+            const form = document.querySelector("#new_task_form2");
+            const input = document.querySelector("#new_task_input2");
+            const tasks_container = document.querySelector("#tasks_container2");
+    
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+        
+                const task = input.value;
+                // creating task div
+                const task_el = document.createElement('div');
+                task_el.classList.add('task');
+
+                //input, creating task input
+                const task_input = document.createElement('input');
+                task_input.type = 'text';
+                task_input.classList.add('text');
+                task_input.value = task;
+                task_input.setAttribute('readonly', 'readonly');
+        
+                task_el.appendChild(task_input);
+
+                // actions, creating edit and delete buttons
+                const task_actions = document.createElement('div');
+                task_actions.classList.add('actions');
+                
+                const task_edit = document.createElement('button');
+                task_edit.classList.add('edit');
+                task_edit.innerText = 'Edit';
+        
+                const task_delete = document.createElement('button');
+                task_delete.classList.add('delete');
+                task_delete.innerText = 'Delete';
+        
+                task_actions.appendChild(task_edit);
+                task_actions.appendChild(task_delete);
+        
+                task_el.appendChild(task_actions);
+        
+                tasks_container.appendChild(task_el);
+        
+                input.value = '';
+
+               // editing task
+               task_edit.addEventListener('click', (e) => {
+                if (task_edit.innerText.toLowerCase() == "edit") {
+                    task_edit.innerText = "Save";
+                    task_input.removeAttribute("readonly");
+                    task_input.focus();
+                } else {
+                    task_edit.innerText = "Edit";
+                    task_input.setAttribute("readonly", "readonly");
+                }
+                });
                 // deleting task
                 task_delete.addEventListener('click', (e) => {
                     tasks_container.removeChild(task_el);
                 });
             });
         });
+
+        window.addEventListener('load', () => {
+            const form = document.querySelector("#new_task_form3");
+            const input = document.querySelector("#new_task_input3");
+            const tasks_container = document.querySelector("#tasks_container3");
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+        
+                const task = input.value;
+                // creating task div
+                const task_el = document.createElement('div');
+                task_el.classList.add('task');
+
+                //input, creating task input
+                const task_input = document.createElement('input');
+                task_input.type = 'text';
+                task_input.classList.add('text');
+                task_input.value = task;
+                task_input.setAttribute('readonly', 'readonly');
+        
+                task_el.appendChild(task_input);
+
+                // actions, creating edit and delete buttons
+                const task_actions = document.createElement('div');
+                task_actions.classList.add('actions');
+                
+                const task_edit = document.createElement('button');
+                task_edit.classList.add('edit');
+                task_edit.innerText = 'Edit';
+        
+                const task_delete = document.createElement('button');
+                task_delete.classList.add('delete');
+                task_delete.innerText = 'Delete';
+        
+                task_actions.appendChild(task_edit);
+                task_actions.appendChild(task_delete);
+        
+                task_el.appendChild(task_actions);
+        
+                tasks_container.appendChild(task_el);
+        
+                input.value = '';
+
+               // editing task
+               task_edit.addEventListener('click', (e) => {
+                if (task_edit.innerText.toLowerCase() == "edit") {
+                    task_edit.innerText = "Save";
+                    task_input.removeAttribute("readonly");
+                    task_input.focus();
+                } else {
+                    task_edit.innerText = "Edit";
+                    task_input.setAttribute("readonly", "readonly");
+                }
+                });
+                // deleting task
+                task_delete.addEventListener('click', (e) => {
+                    tasks_container.removeChild(task_el);
+                });
+            });
+        });
+
     </script>
 </body>
 </html>
